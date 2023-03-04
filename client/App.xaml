@@ -1,0 +1,30 @@
+﻿<Application x:Class="safari.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:safari"
+             xmlns:viewModel="clr-namespace:safari.Model.ViewModels"
+             xmlns:view="clr-namespace:safari.Model.Views"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="UI/ButtonTheme.xaml"/>
+                <ResourceDictionary Source="UI/LightButtonTheme.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <DataTemplate DataType="{x:Type viewModel:EmptyViewModel}">
+                <view:EmptyView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:ContactViewModel}">
+                <view:ContactView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:LessonViewModel}">
+                <view:LessonView/>
+            </DataTemplate>
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

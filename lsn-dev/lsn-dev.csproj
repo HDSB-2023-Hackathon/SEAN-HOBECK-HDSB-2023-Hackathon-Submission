@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <RootNamespace>lsn</RootNamespace>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <Title>.lsn filestream IO.</Title>
+    <Authors>Sean Hobeck</Authors>
+    <PackageProjectUrl>https://github.com/seanhobeck/mind-safari/tree/main/lsn-dev/</PackageProjectUrl>
+    <BaseIntermediateOutputPath>C:\Users\main\Desktop\mind-safari\lsn-dev\generated</BaseIntermediateOutputPath>
+    <BaseOutputPath>C:\Users\main\Desktop\mind-safari\lsn-dev\build</BaseOutputPath>
+    <OutputType>Library</OutputType>
+    <StartupObject></StartupObject>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DebugType>portable</DebugType>
+  </PropertyGroup>
+
+</Project>
