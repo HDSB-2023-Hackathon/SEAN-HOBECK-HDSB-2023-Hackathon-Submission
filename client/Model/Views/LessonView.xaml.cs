@@ -66,16 +66,16 @@ namespace safari.Model.Views
                 {
                     switch (token._data[0]) 
                     {
-                        case ("posi_x"):
+                        case ("x"):
                             x = int.Parse(token._data[1]);
                             break;
-                        case ("posi_y"):
+                        case ("y"):
                             y = int.Parse(token._data[1]);
                             break;
-                        case ("width"):
+                        case ("w"):
                             w = int.Parse(token._data[1]);
                             break;
-                        case ("height"):
+                        case ("h"):
                             h = int.Parse(token._data[1]);
                             break;
                     }
@@ -86,8 +86,8 @@ namespace safari.Model.Views
                 {
                     TextBlock tBlock = new TextBlock();
                     tBlock.Text = token._data[1];
-                    tBlock.VerticalAlignment = VerticalAlignment.Center;
-                    tBlock.HorizontalAlignment = HorizontalAlignment.Center;
+                    tBlock.VerticalAlignment = VerticalAlignment.Top;
+                    tBlock.HorizontalAlignment = HorizontalAlignment.Left;
                     tBlock.Margin = new Thickness(x, y, 0, 0);
                     tBlock.FontFamily = new FontFamily("Reem Kufi");
                     _default = true;
