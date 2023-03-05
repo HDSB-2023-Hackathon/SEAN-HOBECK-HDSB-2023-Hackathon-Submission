@@ -1,2 +1,2 @@
-# mind-safari
- A interactive education app for students.
+# Mind Safari
+ A interactive education app and learning app for students.
