@@ -1,0 +1,51 @@
+﻿<UserControl x:Class="safari.Model.Views.HelpView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:safari.Model.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="720" d:DesignWidth="860">
+    <Grid Background="GhostWhite">
+        <TextBlock Text="Need Help?"
+                   FontFamily="Reem Kufi"
+                   Foreground="Gray"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Top"
+                   FontSize="32"
+                   Margin="0,75,0,0"
+                   FontWeight="Black"/>
+
+        <TextBlock Text="If you are a student and are looking for help, you can contact your teacher and or parent/guardian."
+                   FontFamily="Reem Kufi"
+                   TextWrapping="Wrap"
+                   Foreground="Gray"
+                   HorizontalAlignment="Center"
+                   TextAlignment="Center"
+                   VerticalAlignment="Top"
+                   FontSize="14"
+                   FontWeight="ExtraLight"
+                   Margin="0,202,0,0" Width="344" Height="80"
+                   />
+
+        <TextBlock Text="You can also read our contact page."
+                   FontFamily="Reem Kufi"
+                   TextAlignment="Center"
+                   Foreground="Gray"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Top"
+                   FontSize="12"
+                   FontStyle="Italic"
+                   Margin="0,280,0,0" Width="344" Height="80"
+                   FontWeight="Light"
+                   />
+
+        <TextBlock Text="Mind Safari @Inc. 2023"
+                   Foreground="Gray"
+                   HorizontalAlignment="Left"
+                   FontSize="12"
+                   Margin="356,0,0,20"
+                   VerticalAlignment="Bottom"
+                   FontFamily="Reem Kufi"/>
+    </Grid>
+</UserControl>

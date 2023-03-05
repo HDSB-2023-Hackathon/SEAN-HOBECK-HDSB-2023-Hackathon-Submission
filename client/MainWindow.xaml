@@ -70,7 +70,7 @@
                     FontSize="16"
                     FontFamily="Reem Kufi"
                     Style="{StaticResource ButtonTheme}" FontWeight="Bold"
-                    Command="{Binding OpenEmpty}"/>
+                    Command="{Binding OpenHelp}"/>
 
             </StackPanel>
         </Grid>

@@ -26,12 +26,12 @@ namespace lsn
         UNKN = -1,
 
         /// <summary>
-        /// Link to a video or media. eg: link=videos/video1.mp4
+        /// Link to a video or media. eg: link=youtube.com/idk
         /// </summary>
         LINK = (1 << 0),
-        
+
         /// <summary>
-        /// Attribute tokens, eg: marg_x=21, marg_y=22, posi_x=31, posi_y=32
+        /// Attribute tokens, eg: x=21, y=22, x=31, y=32
         /// </summary>
         ATTR = (1 << 1),
 
@@ -43,7 +43,17 @@ namespace lsn
         /// <summary>
         /// A note.     eg: note=Remember the CAST Rule!
         /// </summary>
-        NOTE = (1 << 3)
+        NOTE = (1 << 3),
+
+        /// <summary>
+        /// A absolute path to a video     eg: video=C:\\Users\\Teacher\\ICS3U1\\IntroToPython.mp4
+        /// </summary>
+        VIDEO = (1 << 4),
+
+        /// <summary>
+        /// A answer to a interactive question eg: answer=49
+        /// </summary>
+        ANSWER = (1 << 5),
     };
 
     /// <summary>
@@ -71,7 +81,7 @@ namespace lsn
         /// <summary>
         /// Default Constructor
         /// </summary>
-        public Token_t(int i = 0) 
+        public Token_t(int i = 0)
         {
             _data = null;
             _data_L = 0;
@@ -83,7 +93,7 @@ namespace lsn
         /// </summary>
         /// <param name="data">Parsed data.</param>
         /// <param name="data_T">Type of processed token.</param>
-        public Token_t(string[] data, sbyte data_T) 
+        public Token_t(string[] data, sbyte data_T)
         {
             _data_L = data.Length;
             _data = new string[_data_L];
@@ -95,7 +105,7 @@ namespace lsn
         /// Formatting out to a file.
         /// </summary>
         /// <returns>A string of the current object</returns>
-        public string ToFile() 
+        public string ToFile()
         {
             string strOut = _data_L + "~" + _data_T;
             foreach (string _piece in _data)
@@ -108,7 +118,7 @@ namespace lsn
         /// <summary>
         /// Creates a token from the string provided.
         /// </summary>
-        public void FromFile(string strIn) 
+        public void FromFile(string strIn)
         {
             string[] szSplit = strIn.Split('~');
             _data_L = int.Parse(szSplit[0]);

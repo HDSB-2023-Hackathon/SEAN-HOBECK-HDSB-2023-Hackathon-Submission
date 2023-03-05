@@ -6,6 +6,7 @@
  *  @date: March 4th, 2023
  * 
  **/
+
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -21,7 +22,7 @@ namespace lsn
         /// </summary>
         /// <param name="szFilename">The name of the file to be parsed.</param>
         /// <returns>ParsedFile Structure</returns>
-        public static ParsedFile Parse(string szFilename) 
+        public static ParsedFile Parse(string szFilename)
         {
             /// Checking if the file exists.
             if (!File.Exists(szFilename))
@@ -34,10 +35,10 @@ namespace lsn
             List<string> lParsed = new List<string>();
 
             /// Getting the input streamreader
-            using (StreamReader sInput = new StreamReader(szFilename)) 
+            using (StreamReader sInput = new StreamReader(szFilename))
             {
                 /// If there is a next character to be read.
-                while (sInput.Peek() >= 0) 
+                while (sInput.Peek() >= 0)
                 {
                     /// Should not be null.
                     string szLine = sInput.ReadLine();
@@ -49,7 +50,7 @@ namespace lsn
 
             int iCount = 0;
             /// Looping through the parsed lines.
-            foreach (string szLine in lParsed) 
+            foreach (string szLine in lParsed)
             {
                 /// the Split string by the equals delimiter.
                 string[] szSplit = szLine.Split('=');
@@ -58,24 +59,28 @@ namespace lsn
                 /// Matching the starting split to the attribute.
                 switch (szSplit[0])
                 {
-                    case ("marg_y"):
-                    case ("marg_x"):
-                    case ("posi_x"):
-                    case ("posi_y"):
-                        sbToken = (sbyte) EToken.ATTR;
+                    case ("x"):
+                    case ("y"):
+                    case ("w"):
+                    case ("h"):
+                        sbToken = (sbyte)EToken.ATTR;
                         break;
 
                     case ("note"):
-                        sbToken = (sbyte) EToken.NOTE;
+                        sbToken = (sbyte)EToken.NOTE;
                         break;
 
                     case ("link"):
-                        sbToken = (sbyte) EToken.LINK;
+                        sbToken = (sbyte)EToken.LINK;
+                        break;
+
+                    case ("video"):
+                        sbToken = (sbyte)EToken.VIDEO;
                         break;
 
                     case ("question"):
                     case ("field"):
-                        sbToken = (sbyte) EToken.QUES;
+                        sbToken = (sbyte)EToken.QUES;
                         break;
 
                     default:

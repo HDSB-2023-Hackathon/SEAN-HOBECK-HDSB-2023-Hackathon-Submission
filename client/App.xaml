@@ -25,6 +25,10 @@
                 <view:LessonView/>
             </DataTemplate>
 
+            <DataTemplate DataType="{x:Type viewModel:HelpViewModel}">
+                <view:HelpView/>
+            </DataTemplate>
+
         </ResourceDictionary>
     </Application.Resources>
 </Application>

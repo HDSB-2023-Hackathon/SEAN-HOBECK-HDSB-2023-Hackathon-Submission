@@ -166,6 +166,11 @@ namespace studio
                     new lsn.Token_t(new string[] { "h", Convert.ToString(alDialog.attrH) }, (sbyte)lsn.EToken.ATTR));
                 pFile.l_Tokens.Add(
                     new lsn.Token_t(new string[] { "link", alDialog.szLink }, (sbyte)lsn.EToken.LINK));
+
+                /// Adding a rectangle to the canvas, then adding a textbox
+                Rect rPos = new Rect(alDialog.attrX, alDialog.attrY, alDialog.attrW, alDialog.attrH);
+                Create_Rectangle(rPos);
+                Create_TextBox(rPos, alDialog.szLink);
             }
         }
         /// <summary>

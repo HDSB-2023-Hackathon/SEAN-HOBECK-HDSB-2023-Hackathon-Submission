@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace safari.Model
 {
@@ -15,10 +16,12 @@ namespace safari.Model
         public RelayCommand OpenEmpty { get; set; }
         public RelayCommand OpenContact { get; set; }
         public RelayCommand OpenLesson { get; set; }
+        public RelayCommand OpenHelp { get; set; }
 
         public EmptyViewModel emptyModel { get; set; }
         public ContactViewModel contactModel { get; set; } 
         public LessonViewModel lessonModel { get; set; }
+        public HelpViewModel helpModel { get; set; }
 
         public object Current
         {
@@ -35,6 +38,7 @@ namespace safari.Model
             emptyModel = new EmptyViewModel();
             contactModel = new ContactViewModel();
             lessonModel = new LessonViewModel();
+            helpModel = new HelpViewModel();
             Current = emptyModel;
 
             OpenEmpty = new RelayCommand(o => 
@@ -50,6 +54,11 @@ namespace safari.Model
             OpenLesson = new RelayCommand(o =>
             {
                 Current = lessonModel;
+            });
+
+            OpenHelp = new RelayCommand(o =>
+            {
+                Current = helpModel;
             });
         }
     }
