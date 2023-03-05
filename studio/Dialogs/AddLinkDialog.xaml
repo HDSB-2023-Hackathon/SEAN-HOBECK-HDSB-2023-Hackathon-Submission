@@ -6,12 +6,65 @@
         xmlns:local="clr-namespace:studio.Dialogs"
         mc:Ignorable="d"
         ResizeMode="NoResize"
-        Title="Add a Link" Height="250" Width="400">
+        Title="Add a Link" Height="215" Width="245">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="79*"/>
-            <ColumnDefinition Width="21*"/>
-        </Grid.ColumnDefinitions>
+        <Button FontFamily="Reem Kufi" 
+                Content="Apply" 
+                Margin="0,0,0,5" 
+                VerticalAlignment="Bottom"
+                HorizontalAlignment="Center" 
+                Width="72" 
+                Click="Button_Click"/>
+
+        <TextBox Height="20"
+                 Width="43"
+                 FontFamily="Reem Kufi"
+                 HorizontalAlignment="Right"
+                 VerticalAlignment="Top"
+                 Margin="0,75,10,0"
+                 Text="x"
+                 TextAlignment="Center"
+                 x:Name="XAttr"/>
+
+        <TextBox Height="20"
+                 Width="43"
+                 FontFamily="Reem Kufi"
+                 HorizontalAlignment="Right"
+                 VerticalAlignment="Top"
+                 Margin="0,100,10,0"
+                 Text="y"
+                 TextAlignment="Center"
+                 x:Name="YAttr"/>
+
+        <TextBox Height="20"
+                 Width="43"
+                 FontFamily="Reem Kufi"
+                 HorizontalAlignment="Right"
+                 VerticalAlignment="Top"
+                 Margin="0,125,10,0"
+                 Text="w"
+                 TextAlignment="Center"
+                 x:Name="WAttr"/>
+
+        <TextBox Height="20"
+                 Width="43"
+                 FontFamily="Reem Kufi"
+                 HorizontalAlignment="Right"
+                 VerticalAlignment="Top"
+                 Margin="0,150,10,0"
+                 Text="h"
+                 TextAlignment="Center"
+                 x:Name="HAttr"/>
+
+        <TextBox Height="40"
+                 Width="216"
+                 FontFamily="Reem Kufi"
+                 HorizontalAlignment="Left"
+                 VerticalAlignment="Top"
+                 Margin="10,10,0,0"
+                 Text="Your link..."
+                 FontSize="10"
+                 x:Name="LinkAttr"/>
 
     </Grid>
 </Window>

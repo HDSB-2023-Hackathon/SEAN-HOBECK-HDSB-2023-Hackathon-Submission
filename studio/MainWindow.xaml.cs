@@ -7,10 +7,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
+using System.Windows.Media;
 using System.Windows.Navigation;
+using System.Windows.Shapes;
 
 namespace studio
 {
@@ -35,6 +38,44 @@ namespace studio
             /// Creating our parsed output file.
             pFile = new lsn.ParsedFile();
             InitializeComponent();
+
+            /// Finding the UI Canvas
+            uiCanvas = FindName("UICanvas") as Canvas;
+        }
+        /// <summary>
+        /// Adding a Rectangle to the canvas.
+        /// </summary>
+        /// <param name="uRect">x, y, w, h of the Rectangle</param>
+        public void Create_Rectangle(Rect uRect) 
+        {
+            Rectangle cRect = new Rectangle();
+            cRect.VerticalAlignment = VerticalAlignment.Top;
+            cRect.HorizontalAlignment = HorizontalAlignment.Left;
+            cRect.Margin = new Thickness(uRect.X, uRect.Y, 0, 0);
+            cRect.Height = uRect.Height;
+            cRect.Width = uRect.Width;
+            cRect.Fill = Brushes.Transparent;
+            cRect.Stroke = Brushes.Black;
+
+            uiCanvas.Children.Add(cRect);
+        }
+        /// <summary>
+        /// Adding a Textbox to the canvas.
+        /// </summary>
+        /// <param name="uRect">x, y, w, h of the textbox</param>
+        /// <param name="szText">The text to be displayed.</param>
+        public void Create_TextBox(Rect uRect, string szText)
+        {
+            Label cText = new Label();
+            cText.VerticalAlignment = VerticalAlignment.Top;
+            cText.HorizontalAlignment = HorizontalAlignment.Left;
+            cText.Margin = new Thickness(uRect.X, uRect.Y, 0, 0);
+            cText.Height = uRect.Height;
+            cText.Width = uRect.Width;
+            cText.Content = szText;
+            cText.FontFamily = new FontFamily("Reem Kufi");
+
+            uiCanvas.Children.Add(cText);
         }
 
         /// <summary>
@@ -61,6 +102,11 @@ namespace studio
                     new lsn.Token_t(new string[] { "h", Convert.ToString(anDialog.attrH) }, (sbyte)lsn.EToken.ATTR));
                 pFile.l_Tokens.Add(
                     new lsn.Token_t(new string[] { "note", anDialog.szNote }, (sbyte)lsn.EToken.NOTE));
+
+                /// Adding a rectangle to the canvas, then adding a textbox
+                Rect rPos = new Rect(anDialog.attrX, anDialog.attrY, anDialog.attrW, anDialog.attrH);
+                Create_Rectangle(rPos);
+                Create_TextBox(rPos, anDialog.szNote);
             }
         }
         /// <summary>
@@ -73,7 +119,29 @@ namespace studio
             AddQuestionDialog aqDialog = new AddQuestionDialog();
             aqDialog.ShowDialog();
 
+            if (aqDialog.szQuestion != "" && aqDialog.szAnswer != "") 
+            {
+                /// Adding x, y, w, h attributes then the question and answer.
+                pFile.l_Tokens.Add(
+                    new lsn.Token_t(new string[] { "x", Convert.ToString(aqDialog.attrX) }, (sbyte)lsn.EToken.ATTR));
+                pFile.l_Tokens.Add(
+                    new lsn.Token_t(new string[] { "y", Convert.ToString(aqDialog.attrY) }, (sbyte)lsn.EToken.ATTR));
+                pFile.l_Tokens.Add(
+                    new lsn.Token_t(new string[] { "w", Convert.ToString(aqDialog.attrW) }, (sbyte)lsn.EToken.ATTR));
+                pFile.l_Tokens.Add(
+                    new lsn.Token_t(new string[] { "h", Convert.ToString(aqDialog.attrH) }, (sbyte)lsn.EToken.ATTR));
+                pFile.l_Tokens.Add(
+                    new lsn.Token_t(new string[] { "question", aqDialog.szQuestion }, (sbyte)lsn.EToken.QUES));
+                pFile.l_Tokens.Add(
+                    new lsn.Token_t(new string[] { "answer", aqDialog.szAnswer }, (sbyte)lsn.EToken.ANSWER));
 
+                /// Adding a rectangle to the canvas, then adding a textbox
+                Rect rPos = new Rect(aqDialog.attrX, aqDialog.attrY, aqDialog.attrW, aqDialog.attrH);
+                Create_Rectangle(rPos);
+                Create_TextBox(rPos, aqDialog.szQuestion);
+                Rect rNew = new Rect(aqDialog.attrX, aqDialog.attrY + aqDialog.attrH - 50, aqDialog.attrW, 50);
+                Create_TextBox(rNew, aqDialog.szAnswer);
+            }
         }
         /// <summary>
         /// When the "Add Link" button is clicked.
@@ -85,7 +153,20 @@ namespace studio
             AddLinkDialog alDialog = new AddLinkDialog();
             alDialog.ShowDialog();
 
-
+            if (alDialog.szLink != "")
+            {
+                /// Adding x, y, w, h attributes then the video.
+                pFile.l_Tokens.Add(
+                    new lsn.Token_t(new string[] { "x", Convert.ToString(alDialog.attrX) }, (sbyte)lsn.EToken.ATTR)); ;
+                pFile.l_Tokens.Add(
+                    new lsn.Token_t(new string[] { "y", Convert.ToString(alDialog.attrY) }, (sbyte)lsn.EToken.ATTR));
+                pFile.l_Tokens.Add(
+                    new lsn.Token_t(new string[] { "w", Convert.ToString(alDialog.attrW) }, (sbyte)lsn.EToken.ATTR));
+                pFile.l_Tokens.Add(
+                    new lsn.Token_t(new string[] { "h", Convert.ToString(alDialog.attrH) }, (sbyte)lsn.EToken.ATTR));
+                pFile.l_Tokens.Add(
+                    new lsn.Token_t(new string[] { "link", alDialog.szLink }, (sbyte)lsn.EToken.LINK));
+            }
         }
         /// <summary>
         /// When the "Add Video" button is clicked.
@@ -111,6 +192,12 @@ namespace studio
                     new lsn.Token_t(new string[] { "h", Convert.ToString(avDialog.attrH) }, (sbyte)lsn.EToken.ATTR));
                 pFile.l_Tokens.Add(
                     new lsn.Token_t(new string[] { "video", avDialog.szVideo }, (sbyte)lsn.EToken.VIDEO));
+
+
+                /// Adding a rectangle to the canvas, then adding a textbox
+                Rect rPos = new Rect(avDialog.attrX, avDialog.attrY, avDialog.attrW, avDialog.attrH);
+                Create_Rectangle(rPos);
+                Create_TextBox(rPos, avDialog.szVideo);
             }
         }
         /// <summary>

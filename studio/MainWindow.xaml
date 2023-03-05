@@ -60,6 +60,7 @@
         <TextBlock Text="Mind-Safari Studio"
                    FontFamily="Reem Kufi"
                    FontSize="16"
-                   Margin="10,10,638,648"/>
+                   Foreground="White"
+                   Margin="700,18,-52,0" Grid.Row="1"/>
     </Grid>
 </Window>
