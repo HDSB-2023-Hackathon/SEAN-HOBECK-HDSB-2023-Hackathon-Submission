@@ -1,7 +1,7 @@
 
 # Mind Safari
  A interactive education app and learning app for students & teachers.
-![Our logo](https://media.discordapp.net/attachments/1081339157600817213/1081402761700180039/Logo.png)
+![Our logo](images/Logo.png)
 
 
 ## Table of Contents
