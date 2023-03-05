@@ -34,6 +34,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Studio-Logo.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -55,6 +58,26 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Dialogs\AddVideoDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Dialogs\ExportDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Dialogs\AddQuestionDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Dialogs\AddLinkDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Dialogs\AddNoteDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -62,6 +85,21 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dialogs\AddVideoDialog.xaml.cs">
+      <DependentUpon>AddVideoDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\ExportDialog.xaml.cs">
+      <DependentUpon>ExportDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\AddQuestionDialog.xaml.cs">
+      <DependentUpon>AddQuestionDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\AddLinkDialog.xaml.cs">
+      <DependentUpon>AddLinkDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\AddNoteDialog.xaml.cs">
+      <DependentUpon>AddNoteDialog.xaml</DependentUpon>
     </Compile>
     <Compile Include="Lsn\ParsedFile.cs" />
     <Compile Include="Lsn\Parser.cs" />
@@ -107,6 +145,12 @@
     <Resource Include="Resources\Note.png" />
     <Resource Include="Resources\Question.png" />
     <Resource Include="Resources\Video.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Studio-Logo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Studio-Logo.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

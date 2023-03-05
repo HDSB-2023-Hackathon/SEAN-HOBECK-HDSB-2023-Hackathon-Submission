@@ -9,32 +9,57 @@
         AllowsTransparency="True"
         Icon="Resources/Studio-Logo.png"
         ResizeMode="CanResize"
-        Background="Transparent"
+        Background="#131313"
         Title="Mind Safari Studio" Height="800" Width="860">
     <Grid >
-        <Border CornerRadius="5">
-            <Canvas Background="#131313">
-                <Image Source="Resources/Note.png" 
+        <Grid.RowDefinitions>
+            <RowDefinition Height="720"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Border CornerRadius="10">
+            <Canvas Background="#ECECEC" x:Name="UICanvas">
+                <Button Content="Add Note"
+                    FontFamily="Reem Kufi"
+                    x:Name="NoteButton"
                     Height="50" 
-                    Canvas.Left="265" Canvas.Top="740"
-                    MouseLeftButtonDown="Note_MouseLeftButtonDown"/>
-                <Image Source="Resources/Question.png" 
+                    Canvas.Left="347" Canvas.Top="740"
+                    Click="Note_Click" HorizontalAlignment="Left" VerticalAlignment="Center" Width="75"/>
+
+                <Button Content="Add Question"
+                    FontFamily="Reem Kufi"
+                    x:Name="QuestionButton"
                     Height="50" 
-                    Canvas.Left="335" Canvas.Top="740"
-                    MouseLeftButtonDown="Question_MouseLeftButtonDown"/>
-                <Image Source="Resources/Answer.png" 
+                    Canvas.Left="427" Canvas.Top="740"
+                    Click="Question_Click" HorizontalAlignment="Left" VerticalAlignment="Center" Width="90"/>
+
+                <Button Content="Add Link"
+                    FontFamily="Reem Kufi"
+                    x:Name="LinkButton"
                     Height="50" 
-                    Canvas.Left="405" Canvas.Top="740"
-                    MouseLeftButtonDown="Answer_MouseLeftButtonDown"/>
-                <Image Source="Resources/Link.png" 
+                    Canvas.Left="522" Canvas.Top="740"
+                    Click="Link_Click" HorizontalAlignment="Left" VerticalAlignment="Center" Width="78"/>
+
+                <Button Content="Add Video"
+                    FontFamily="Reem Kufi"
+                    x:Name="VideoButton"
                     Height="50" 
-                    Canvas.Left="475" Canvas.Top="740"
-                    MouseLeftButtonDown="Link_MouseLeftButtonDown"/>
-                <Image Source="Resources/Video.png" 
+                    Canvas.Left="605" Canvas.Top="740"
+                    Click="Video_Click" HorizontalAlignment="Center" VerticalAlignment="Center" Width="80"/>
+
+                <Button Content="Export"
+                    FontFamily="Reem Kufi"
+                    x:Name="ExportButton"
                     Height="50" 
-                    Canvas.Left="545" Canvas.Top="740"
-                    MouseLeftButtonDown="Video_MouseLeftButtonDown"/>
+                        Width="95"
+                    Canvas.Left="15" Canvas.Top="740"
+                    Click="Export_Click"/>
             </Canvas>
         </Border>
+
+        <TextBlock Text="Mind-Safari Studio"
+                   FontFamily="Reem Kufi"
+                   FontSize="16"
+                   Margin="10,10,638,648"/>
     </Grid>
 </Window>

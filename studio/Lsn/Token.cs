@@ -32,7 +32,7 @@ namespace lsn
         LINK = (1 << 0),
         
         /// <summary>
-        /// Attribute tokens, eg: marg_x=21, marg_y=22, posi_x=31, posi_y=32
+        /// Attribute tokens, eg: x=21, y=22, x=31, y=32
         /// </summary>
         ATTR = (1 << 1),
 

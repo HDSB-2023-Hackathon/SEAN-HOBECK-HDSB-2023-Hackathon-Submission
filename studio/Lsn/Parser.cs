@@ -61,6 +61,8 @@ namespace lsn
                 {
                     case ("x"):
                     case ("y"):
+                    case ("w"):
+                    case ("h"):
                         sbToken = (sbyte) EToken.ATTR;
                         break;
 

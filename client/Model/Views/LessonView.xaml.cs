@@ -102,10 +102,5 @@ namespace safari.Model.Views
                 }
             }
         }
-
-        private void LessonButton_IsMouseCapturedChanged(object sender, DependencyPropertyChangedEventArgs e)
-        {
-
-        }
     }
 }

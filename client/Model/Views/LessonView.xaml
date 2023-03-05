@@ -21,7 +21,6 @@
                     HorizontalAlignment="Center"
                     Style="{StaticResource LightButtonTheme}" FontWeight="Bold"
                     Click="LessonButton_Click"
-                    IsMouseCapturedChanged="LessonButton_IsMouseCapturedChanged"
                     Width="210"/>
     </Grid>
 </UserControl>
