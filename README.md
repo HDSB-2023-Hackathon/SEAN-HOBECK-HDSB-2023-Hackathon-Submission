@@ -20,8 +20,8 @@ no pre-requisites are required to be able to run Mind-Safari and its tools.
 
 ## Usage
 
-![Client](images/Client.png)
-![Studio](images/Studio.png)
+![Client](images/Client.PNG)
+![Studio](images/Studio.PNG)
 
 ## License
 This project is released under the GNU GPLv3 License.
